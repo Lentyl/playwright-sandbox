@@ -1,13 +1,13 @@
 import { test as pageTest, chromium } from "@playwright/test";
-import TextBoxPage from "../Pages/elements/TextBoxPage";
-import BrokenImgeLinkPage from "../Pages/elements/BrokenImgeLinkPage";
-import ButtonsPage from "../Pages/elements/ButtonsPage";
-import CheckBoxPage from "../Pages/elements/CheckBoxPage";
-import DyamicPropertiesPage from "../Pages/elements/DyamicPropertiesPage";
-import LinksPage from "../Pages/elements/LinksPage";
-import RadioButtonPage from "../Pages/elements/RadioButtonPage"
-import WebTablesPage from "../Pages/elements/WebTablesPage"
-import UploadAndDownloadPage from "../Pages/elements/UploadAndDownloadPage"
+import TextBoxPage from "../pages/elements/TextBoxPage";
+import BrokenImgeLinkPage from "../pages/elements/BrokenImgeLinkPage";
+import ButtonsPage from "../pages/elements/ButtonsPage";
+import CheckBoxPage from "../pages/elements/CheckBoxPage";
+import DyamicPropertiesPage from "../pages/elements/DyamicPropertiesPage";
+import LinksPage from "../pages/elements/LinksPage";
+import RadioButtonPage from "../pages/elements/RadioButtonPage"
+import WebTablesPage from "../pages/elements/WebTablesPage"
+import UploadAndDownloadPage from "../pages/elements/UploadAndDownloadPage"
 
 type pages = {
     textBoxPage: TextBoxPage;
