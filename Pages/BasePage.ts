@@ -1,4 +1,5 @@
 import { Page, Locator } from "@playwright/test";
+import * as fs from 'fs';
 
 
 export default class BasePage {
@@ -25,7 +26,19 @@ export default class BasePage {
     }
 
     async randomNumber(min: number, max: number): Promise<number> {
-        return await Math.floor(Math.random() * (max - min)) + min;
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    async isFileWasDownloaded(path: string): Promise<boolean> {
+        let fileDownloaded: boolean = false
+        if (fs.existsSync(path)) fileDownloaded = true
+        return fileDownloaded
+    }
+
+    async deleteFile(path: string) {
+        if (fs.existsSync(path)) {
+            fs.unlinkSync('data/downloads/sampleFile.jpeg');
+        }
     }
 
 } 

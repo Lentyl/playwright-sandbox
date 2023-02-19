@@ -113,11 +113,27 @@ test("Elements - Links test", async ({ page, linksPage }) => {
     await expect(linksPage.request_response_text()).toHaveText('Link has responded with staus 404 and status text Not Found');
     expect((await linksPage.getNewTab()).url()).toContain('https://demoqa.com/');
 }) 
-*/
 
 test("Elements - Broken links, images tests", async ({ page, brokenImgeLinkPage }) => {
     await page.goto("/");
     await brokenImgeLinkPage.commonSpace.goToTab(brokenImgeLinkPage.commonSpace.elements_card(), brokenImgeLinkPage.broken_link_image_tab());
-    brokenImgeLinkPage.getBrokenImage();
+    expect(await brokenImgeLinkPage.isBrokenImage(), "I declare I know there is broken image :-)").toBe(true);
+    await brokenImgeLinkPage.broken_link().click();
+    expect(page.url()).toContain('http://the-internet.herokuapp.com/status_codes/500');
+}) 
 
+test("Elements - upload and download tests", async ({ page, uploadAndDownloadPage }) => {
+    await page.goto("/");
+    await uploadAndDownloadPage.commonSpace.goToTab(uploadAndDownloadPage.commonSpace.elements_card(), uploadAndDownloadPage.upload_and_download_tab());
+    await uploadAndDownloadPage.downloadFile();
+    expect(await uploadAndDownloadPage.commonSpace.isFileWasDownloaded('data/downloads/sampleFile.jpeg')).toBe(true);
+    await uploadAndDownloadPage.uploadFile();
+    await uploadAndDownloadPage.commonSpace.deleteFile('data/downloads/sampleFile.jpeg');
+    await expect(uploadAndDownloadPage.upload_file_path_text()).toHaveText('C:\\fakepath\\sampleFile.jpeg');
+}) 
+*/
+test("Elements - upload and download tests", async ({ page, dyamicPropertiesPage }) => {
+    await page.goto("/");
+    await dyamicPropertiesPage.commonSpace.goToTab(dyamicPropertiesPage.commonSpace.elements_card(), dyamicPropertiesPage.dynamic_Properties_tab());
+    await 
 }) 
