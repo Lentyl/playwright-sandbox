@@ -1,8 +1,7 @@
-import { expect, Page } from "@playwright/test"
+import { expect } from "@playwright/test"
 import { test } from "../fixtures/pagesFixture"
-import LinksPage from "../Pages/elements/LinksPage";
 
-/*
+
 test("Elements - text box test", async ({ page, textBoxPage }) => {
     await page.goto("/");
     await textBoxPage.commonSpace.goToTab(textBoxPage.commonSpace.elements_card(), textBoxPage.text_box_tab());
@@ -18,7 +17,7 @@ test("Elements - check box test", async ({ page, checkBoxPage }) => {
     await checkBoxPage.commonSpace.goToTab(checkBoxPage.commonSpace.elements_card(), checkBoxPage.checkbox_tub());
     await checkBoxPage.openTree();
     await checkBoxPage.selectCheckboxes();
-    await expect(await checkBoxPage.checkboxChecked()).toBe(true);
+    expect(await checkBoxPage.checkboxChecked()).toBe(true);
     await expect(checkBoxPage.selected_checkboxes_names().nth(0)).toHaveText('home');
     await expect(checkBoxPage.selected_checkboxes_names().nth(1)).toHaveText('desktop');
     await expect(checkBoxPage.selected_checkboxes_names().nth(2)).toHaveText('notes');
@@ -46,8 +45,8 @@ test("Elements - Radio button test", async ({ page, radioButtonPage }) => {
     await expect(radioButtonPage.selected_text()).toHaveText('You have selected Yes');
     await radioButtonPage.impressive_radio_button().click({ force: true });
     await expect(radioButtonPage.selected_text()).toHaveText('You have selected Impressive');
-    await expect(await radioButtonPage.no_radio_button().isChecked()).toBeFalsy();
-}) 
+    expect(await radioButtonPage.no_radio_button().isChecked()).toBeFalsy();
+})
 
 test("Elements - Web tables test", async ({ page, webTablesPage }) => {
     await page.goto("/");
@@ -81,7 +80,7 @@ test("Elements - Web tables test", async ({ page, webTablesPage }) => {
     await webTablesPage.next_table_page_button().click();
     await expect(webTablesPage.table_page_input()).toHaveAttribute('value', '3');
     await expect(webTablesPage.next_table_page_button()).toBeDisabled();
-}) 
+})
 
 test("Elements - Buttons test", async ({ page, buttonsPage }) => {
     await page.goto("/");
@@ -92,7 +91,7 @@ test("Elements - Buttons test", async ({ page, buttonsPage }) => {
     await expect(buttonsPage.right_click_text()).toHaveText('You have done a right click');
     await buttonsPage.click_me_button().click();
     await expect(buttonsPage.dynamic_click_me_text()).toHaveText('You have done a dynamic click');
-}) 
+})
 
 test("Elements - Links test", async ({ page, linksPage }) => {
     await page.goto("/");
@@ -112,17 +111,17 @@ test("Elements - Links test", async ({ page, linksPage }) => {
     await linksPage.not_Found_link().click();
     await expect(linksPage.request_response_text()).toHaveText('Link has responded with staus 404 and status text Not Found');
     expect((await linksPage.getNewTab()).url()).toContain('https://demoqa.com/');
-}) 
+})
 
-test("Elements - Broken links, images tests", async ({ page, brokenImgeLinkPage }) => {
+test("Elements - Broken links, images test", async ({ page, brokenImgeLinkPage }) => {
     await page.goto("/");
     await brokenImgeLinkPage.commonSpace.goToTab(brokenImgeLinkPage.commonSpace.elements_card(), brokenImgeLinkPage.broken_link_image_tab());
     expect(await brokenImgeLinkPage.isBrokenImage(), "I declare I know there is broken image :-)").toBe(true);
     await brokenImgeLinkPage.broken_link().click();
     expect(page.url()).toContain('http://the-internet.herokuapp.com/status_codes/500');
-}) 
+})
 
-test("Elements - upload and download tests", async ({ page, uploadAndDownloadPage }) => {
+test("Elements - upload and download test", async ({ page, uploadAndDownloadPage }) => {
     await page.goto("/");
     await uploadAndDownloadPage.commonSpace.goToTab(uploadAndDownloadPage.commonSpace.elements_card(), uploadAndDownloadPage.upload_and_download_tab());
     await uploadAndDownloadPage.downloadFile();
@@ -130,10 +129,15 @@ test("Elements - upload and download tests", async ({ page, uploadAndDownloadPag
     await uploadAndDownloadPage.uploadFile();
     await uploadAndDownloadPage.commonSpace.deleteFile('data/downloads/sampleFile.jpeg');
     await expect(uploadAndDownloadPage.upload_file_path_text()).toHaveText('C:\\fakepath\\sampleFile.jpeg');
-}) 
-*/
-test("Elements - upload and download tests", async ({ page, dyamicPropertiesPage }) => {
+})
+
+test("Elements - dynamic properties test", async ({ page, dynamicPropertiesPage }) => {
     await page.goto("/");
-    await dyamicPropertiesPage.commonSpace.goToTab(dyamicPropertiesPage.commonSpace.elements_card(), dyamicPropertiesPage.dynamic_Properties_tab());
-    await 
+    await dynamicPropertiesPage.commonSpace.goToTab(dynamicPropertiesPage.commonSpace.elements_card(), dynamicPropertiesPage.dynamic_Properties_tab());
+    await expect(dynamicPropertiesPage.random_id_text()).toHaveText('This text has random Id');
+    await expect(dynamicPropertiesPage.enable_after_five_sec_button()).toHaveText('Will enable 5 seconds');
+    await expect(dynamicPropertiesPage.color_change_button()).toHaveText('Color Change');
+    await expect(dynamicPropertiesPage.color_change_button()).toHaveCSS('color', 'rgb(220, 53, 69)');
+    await expect(dynamicPropertiesPage.visible_after_five_sec_button()).toHaveText('Visible After 5 Seconds');
+    await expect(dynamicPropertiesPage.visible_after_five_sec_button()).toBeVisible();
 }) 

@@ -3,7 +3,7 @@ import TextBoxPage from "../pages/elements/TextBoxPage";
 import BrokenImgeLinkPage from "../pages/elements/BrokenImgeLinkPage";
 import ButtonsPage from "../pages/elements/ButtonsPage";
 import CheckBoxPage from "../pages/elements/CheckBoxPage";
-import DyamicPropertiesPage from "../pages/elements/DyamicPropertiesPage";
+import DynamicPropertiesPage from "../pages/elements/DynamicPropertiesPage";
 import LinksPage from "../pages/elements/LinksPage";
 import RadioButtonPage from "../pages/elements/RadioButtonPage"
 import WebTablesPage from "../pages/elements/WebTablesPage"
@@ -14,7 +14,7 @@ type pages = {
     brokenImgeLinkPage: BrokenImgeLinkPage;
     buttonsPage: ButtonsPage;
     checkBoxPage: CheckBoxPage;
-    dyamicPropertiesPage: DyamicPropertiesPage;
+    dynamicPropertiesPage: DynamicPropertiesPage;
     linksPage: LinksPage;
     radioButtonPage: RadioButtonPage;
     webTablesPage: WebTablesPage;
@@ -35,8 +35,8 @@ const testPages = pageTest.extend<pages>({
     checkBoxPage: async ({ page }, use) => {
         await use(new CheckBoxPage(page))
     },
-    dyamicPropertiesPage: async ({ page }, use) => {
-        await use(new DyamicPropertiesPage(page))
+    dynamicPropertiesPage: async ({ page }, use) => {
+        await use(new DynamicPropertiesPage(page))
     },
     linksPage: async ({ page }, use) => {
         await use(new LinksPage(page))

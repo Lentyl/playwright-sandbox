@@ -2,7 +2,7 @@ import BasePage from '../BasePage'
 import { Page } from "@playwright/test";
 
 
-export default class DyamicPropertiesPage {
+export default class DynamicPropertiesPage {
 
     readonly page: Page;
     readonly commonSpace: BasePage
