@@ -8,6 +8,7 @@ import LinksPage from "../pages/elements/LinksPage";
 import RadioButtonPage from "../pages/elements/RadioButtonPage"
 import WebTablesPage from "../pages/elements/WebTablesPage"
 import UploadAndDownloadPage from "../pages/elements/UploadAndDownloadPage"
+import FormPage from "../pages/form/FormPage"
 
 type pages = {
     textBoxPage: TextBoxPage;
@@ -19,6 +20,7 @@ type pages = {
     radioButtonPage: RadioButtonPage;
     webTablesPage: WebTablesPage;
     uploadAndDownloadPage: UploadAndDownloadPage;
+    formPage: FormPage;
 }
 
 const testPages = pageTest.extend<pages>({
@@ -49,7 +51,11 @@ const testPages = pageTest.extend<pages>({
     },
     uploadAndDownloadPage: async ({ page }, use) => {
         await use(new UploadAndDownloadPage(page))
+    },
+    formPage: async ({ page }, use) => {
+        await use(new FormPage(page))
     }
+
 })
 
 

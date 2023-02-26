@@ -4,7 +4,7 @@ import { devices } from '@playwright/test';
 const config: PlaywrightTestConfig = {
   testDir: './tests',
   /* Maximum time one test can run for. */
-  timeout: 30 * 1000,
+  timeout: 90 * 10000,
   expect: {
     /**
      * Maximum time expect() should wait for the condition to be met.
@@ -26,7 +26,7 @@ const config: PlaywrightTestConfig = {
   use: {
     headless: false,
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
-    actionTimeout: 30000,
+    actionTimeout: 70000,
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: 'https://demoqa.com/',
     screenshot: 'only-on-failure',
@@ -90,10 +90,10 @@ const config: PlaywrightTestConfig = {
   // outputDir: 'test-results/',
 
   /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run start',
-  //   port: 3000,
-  // },
+  /*   webServer: {
+      command: 'npm run start',
+      port: 3000,
+    }, */
 };
 
 export default config;

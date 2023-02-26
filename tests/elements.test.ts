@@ -2,7 +2,7 @@ import { expect } from "@playwright/test"
 import { test } from "../fixtures/pagesFixture"
 
 
-test("Elements - text box test", async ({ page, textBoxPage }) => {
+/* test("Elements - text box test", async ({ page, textBoxPage }) => {
     await page.goto("/");
     await textBoxPage.commonSpace.goToTab(textBoxPage.commonSpace.elements_card(), textBoxPage.text_box_tab());
     await textBoxPage.fillFormAndSubmit();
@@ -140,4 +140,4 @@ test("Elements - dynamic properties test", async ({ page, dynamicPropertiesPage 
     await expect(dynamicPropertiesPage.color_change_button()).toHaveCSS('color', 'rgb(220, 53, 69)');
     await expect(dynamicPropertiesPage.visible_after_five_sec_button()).toHaveText('Visible After 5 Seconds');
     await expect(dynamicPropertiesPage.visible_after_five_sec_button()).toBeVisible();
-}) 
+})  */

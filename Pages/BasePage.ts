@@ -7,11 +7,11 @@ export default class BasePage {
     readonly page: Page;
 
     elements_card = () => this.page.locator('div.card:nth-child(1)');
-    forms_card = () => 'div.card:nth-child(2)';
-    alerts_frames_windows_card = () => 'div.card:nth-child(3)';
-    widgets_card = () => 'div.card:nth-child(4)';
-    interactions_card = () => 'div.card:nth-child(5)';
-    books_store_aplicaton_card = () => 'div.card:nth-child(6)';
+    forms_card = () => this.page.locator('div.card:nth-child(2)');
+    alerts_frames_windows_card = () => this.page.locator('div.card:nth-child(3)');
+    widgets_card = () => this.page.locator('div.card:nth-child(4)');
+    interactions_card = () => this.page.locator('div.card:nth-child(5)');
+    books_store_aplicaton_card = () => this.page.locator('div.card:nth-child(6)');
 
     constructor(page: Page) {
         this.page = page;
@@ -39,6 +39,11 @@ export default class BasePage {
         if (fs.existsSync(path)) {
             fs.unlinkSync('data/downloads/sampleFile.jpeg');
         }
+    }
+
+    async giveMarginToSubmitBtnAndScrollToBottom(submitButton: Locator) {
+        await submitButton.evaluate(element => element.style.marginBottom = '200px');
+        await this.page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     }
 
 } 
