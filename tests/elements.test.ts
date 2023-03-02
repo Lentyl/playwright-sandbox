@@ -110,7 +110,7 @@ test("Elements - Links test", async ({ page, linksPage }) => {
     await expect(linksPage.request_response_text()).toHaveText('Link has responded with staus 403 and status text Forbidden');
     await linksPage.not_Found_link().click();
     await expect(linksPage.request_response_text()).toHaveText('Link has responded with staus 404 and status text Not Found');
-    expect((await linksPage.getNewTab()).url()).toContain('https://demoqa.com/');
+    expect((await linksPage.commonSpace.getNewTab(linksPage.home_link())).url()).toContain('https://demoqa.com/');
 })
 
 test("Elements - Broken links, images test", async ({ page, brokenImgeLinkPage }) => {

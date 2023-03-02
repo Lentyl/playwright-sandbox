@@ -31,13 +31,4 @@ export default class LinksPage {
     //text response locator
     request_response_text = () => this.page.locator('p#linkResponse');
 
-    async getNewTab(): Promise<Page> {
-        const [newTabs] = await Promise.all([
-            this.page.waitForEvent('popup'),
-            this.home_link().click(),
-        ])
-        return newTabs
-    }
-
-
 }

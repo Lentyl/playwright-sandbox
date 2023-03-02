@@ -1,4 +1,4 @@
-import { Page, Locator } from "@playwright/test";
+import { Page, Locator, Dialog } from "@playwright/test";
 import * as fs from 'fs';
 
 
@@ -44,6 +44,14 @@ export default class BasePage {
     async giveMarginToSubmitBtnAndScrollToBottom(submitButton: Locator) {
         await submitButton.evaluate(element => element.style.marginBottom = '200px');
         await this.page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+    }
+
+    async getNewTab(link: Locator): Promise<Page> {
+        const [newTabs] = await Promise.all([
+            this.page.waitForEvent('popup'),
+            link.click(),
+        ])
+        return newTabs
     }
 
 } 
