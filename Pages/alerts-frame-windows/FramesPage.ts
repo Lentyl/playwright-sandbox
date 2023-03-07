@@ -12,9 +12,11 @@ export default class FramesPage {
     }
 
     //locators
-    browser_windows_tab = () => this.page.locator('//li[child::span[text()="Browser Windows"]]');
-    new_tab_button = () => this.page.locator('button#tabButton');
-    new_tab_window_heading = () => this.page.locator('h1#sampleHeading');
-    new_window_button = () => this.page.locator('button#windowButton');
-    new_window_message_button = () => this.page.locator('button#messageWindowButton');
+    frames_tab = () => this.page.locator('//li[child::span[text()="Frames"]]');
+    first_frame = () => this.page.frameLocator('iframe#frame1');
+    second_frame = () => this.page.frameLocator('iframe#frame2');
+    frame_text = () => 'h1#sampleHeading';
+
+
+
 }
