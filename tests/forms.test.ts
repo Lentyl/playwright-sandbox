@@ -1,7 +1,7 @@
 import { expect } from "@playwright/test"
 import { test } from "../fixtures/pagesFixture"
 
-/* test("Forms - Practice forms test", async ({ page, formPage }) => {
+test("Forms - Practice forms test", async ({ page, formPage }) => {
     await page.goto("/", { waitUntil: "load" });
     await formPage.commonSpace.goToTab(formPage.commonSpace.forms_card(), formPage.practice_form_tab());
     await formPage.fillAndConfirmForm();
@@ -26,4 +26,4 @@ import { test } from "../fixtures/pagesFixture"
     await expect(formPage.modal_confirmation_elements().nth(18)).toHaveText('State and City');
     await expect(formPage.modal_confirmation_elements().nth(19)).toHaveText('NCR Delhi');
     await formPage.commonSpace.giveMarginToSubmitBtnAndScrollToBottom(formPage.modal_window_button());
-}) */
+})

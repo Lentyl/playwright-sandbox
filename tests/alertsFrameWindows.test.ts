@@ -1,7 +1,7 @@
 import { expect } from "@playwright/test"
 import { test } from "../fixtures/pagesFixture"
 
-/* test("Alerts frame windows - Browser windows test", async ({ page, browserWindowsPage }) => {
+test("Alerts frame windows - Browser windows test", async ({ page, browserWindowsPage }) => {
     await page.goto("/", { waitUntil: "load" });
     await browserWindowsPage.commonSpace.goToTab(browserWindowsPage.commonSpace.alerts_frames_windows_card(), browserWindowsPage.browser_windows_tab());
     const newTab = await browserWindowsPage.commonSpace.getNewTab(browserWindowsPage.new_tab_button())
@@ -61,7 +61,7 @@ test("Alerts frame windows - promp box test ", async ({ page, alertsPage }) => {
     });
     await alertsPage.prompt_button().click();
     expect(alertsPage.prompt_message()).toHaveText('You entered Mariusz');
-}) 
+})
 
 test("Alerts frame windows - frames test ", async ({ page, framesPage }) => {
     await page.goto("/");
@@ -73,18 +73,9 @@ test("Alerts frame windows - frames test ", async ({ page, framesPage }) => {
 test("Alerts frame windows - nested frames test ", async ({ page, nestedFramesPage }) => {
     await page.goto("/");
     await nestedFramesPage.commonSpace.goToTab(nestedFramesPage.commonSpace.alerts_frames_windows_card(), nestedFramesPage.nested_frames_tab());
-    const parentFrame = nestedFramesPage.parent_frame()
-    expect(parentFrame.locator(nestedFramesPage.parent_frame_text())).toHaveText('Parent frame');
-    expect(parentFrame.frameLocator(nestedFramesPage.childe_frame()).locator(nestedFramesPage.childe_frame_text())).toHaveText('Child Iframe');
-})
-
-test("Alerts frame windows - nested frames test ", async ({ page, nestedFramesPage }) => {
-    await page.goto("/");
-    await nestedFramesPage.commonSpace.goToTab(nestedFramesPage.commonSpace.alerts_frames_windows_card(), nestedFramesPage.nested_frames_tab());
     await expect(nestedFramesPage.parent_frame_text()).toHaveText('Parent frame');
     await expect(nestedFramesPage.childe_frame_text()).toHaveText('Child Iframe');
 })
-*/
 
 test("Alerts frame windows - modal dialog test", async ({ page, modalDialogPage }) => {
     await page.goto("/");
