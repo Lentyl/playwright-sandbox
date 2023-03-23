@@ -13,5 +13,8 @@ export default class ProgressBarPage {
 
     //locators
     progress_bar_tab = () => this.page.locator('//li[child::span[text()="Progress Bar"]]');
+    start_stop_button = () => this.page.locator('button#startStopButton');
+    reset_button = () => this.page.locator('button#resetButton');
+    progress_bar = () => this.page.locator('div#progressBar > div[aria-valuenow="100"]');
 
 }
