@@ -13,7 +13,8 @@ export default class TabsPage {
 
     //locators
     tabs_tab = () => this.page.locator('//li[child::span[text()="Tabs"]]');
-    page_header = () => this.page.locator('div#tabsContainer > div#tabsContainer> div.mb-3');
+    page_header = () => this.page.locator('div#tabsContainer> div.mb-3');
+    button = () => this.page.locator('button#toolTipButton');
     what_tab = () => this.page.locator('a#demo-tab-what');
     origin_tab = () => this.page.locator('a#demo-tab-origin');
     use_tab = () => this.page.locator('a#demo-tab-use');

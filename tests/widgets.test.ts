@@ -52,7 +52,7 @@ test("widgets - progress bar test", async ({ page, progressBarPage }) => {
     await expect(progressBarPage.reset_button()).toHaveText('Reset');
 })
 
-test.only("widgets - tabs test", async ({ page, tabsPage }) => {
+test("widgets - tabs test", async ({ page, tabsPage }) => {
     await page.goto("/");
     await tabsPage.commonSpace.goToTab(tabsPage.commonSpace.widgets_card(), tabsPage.tabs_tab());
     expect(tabsPage.content().nth(0)).toContainText('Lorem Ipsum is simply dummy text of the printing and typesetting industry.');
@@ -63,8 +63,43 @@ test.only("widgets - tabs test", async ({ page, tabsPage }) => {
     expect(tabsPage.more_tab()).toBeDisabled();
 })
 
-test.only("widgets - tool tip test", async ({ page, tabsPage }) => {
+test("widgets - tool tip test", async ({ page, toolTipsPage }) => {
     await page.goto("/");
-    await tabsPage.commonSpace.goToTab(tabsPage.commonSpace.widgets_card(), tabsPage.tabs_tab());
+    await toolTipsPage.commonSpace.goToTab(toolTipsPage.commonSpace.widgets_card(), toolTipsPage.tool_tip_tab());
+    await toolTipsPage.button().hover();
+    await expect(toolTipsPage.button_message()).toHaveText('You hovered over the Button');
+    await toolTipsPage.input().hover()
+    await expect(toolTipsPage.input_message()).toHaveText('You hovered over the text field');
+    await toolTipsPage.text_link().nth(0).hover()
+    await expect(toolTipsPage.contrary_message()).toHaveText('You hovered over the Contrary');
+    await toolTipsPage.text_link().nth(1).hover()
+    await expect(toolTipsPage.section_message()).toHaveText('You hovered over the 1.10.32');
+})
 
+test("widgets - menu test", async ({ page, menuPage }) => {
+    await page.goto("/");
+    await menuPage.commonSpace.goToTab(menuPage.commonSpace.widgets_card(), menuPage.menu_tab());
+    await menuPage.nav_elements().nth(0).hover();
+    await expect(menuPage.nav_elements().nth(0)).toHaveCSS('background-color', 'rgb(0, 63, 32)');
+    await menuPage.nav_elements().nth(1).hover();
+    await expect(menuPage.nav_elements().nth(1)).toHaveCSS('background-color', 'rgb(0, 63, 32)');
+    await menuPage.nav_elements().nth(2).hover();
+    await expect(menuPage.nav_elements().nth(2)).toHaveCSS('background-color', 'rgb(0, 63, 32)');
+    await menuPage.nav_elements().nth(3).hover();
+    await expect(menuPage.nav_elements().nth(3)).toHaveCSS('background-color', 'rgb(0, 63, 32)');
+    await menuPage.nav_elements().nth(4).hover();
+    await menuPage.nav_elements().nth(5).hover();
+    await expect(menuPage.nav_elements().nth(5)).toHaveCSS('background-color', 'rgb(0, 63, 32)');
+    await menuPage.nav_elements().nth(6).hover();
+    await expect(menuPage.nav_elements().nth(6)).toHaveText('Sub Sub Item 2');
+    await expect(menuPage.nav_elements().nth(6)).toHaveCSS('background-color', 'rgb(0, 63, 32)');
+    await menuPage.nav_elements().nth(7).hover();
+    await expect(menuPage.nav_elements().nth(7)).toHaveCSS('background-color', 'rgb(0, 63, 32)');
+})
+
+test.only("widgets - select menu test", async ({ page, selectMenuPage }) => {
+    await page.goto("/");
+    await selectMenuPage.commonSpace.goToTab(selectMenuPage.commonSpace.widgets_card(), selectMenuPage.select_menu_tab());
+    await selectMenuPage.select_value_combobox().selectOption('A root option');
+    await page.pause();
 }) 

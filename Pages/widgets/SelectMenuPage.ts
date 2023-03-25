@@ -13,5 +13,10 @@ export default class SelectMenuPage {
 
     //locators
     select_menu_tab = () => this.page.locator('//li[child::span[text()="Select Menu"]]');
+    select_value_combobox = () => this.page.locator('//li[child::span[text()="Select Menu"]]');
+    select_one_combobox = () => this.page.locator('//li[child::span[text()="Select Menu"]]');
+    old_style_combobox = () => this.page.locator('//li[child::span[text()="Select Menu"]]');
+    multiselect_combobox = () => this.page.locator('//li[child::span[text()="Select Menu"]]');
+    standard_multiselect_combobox = () => this.page.locator('//li[child::span[text()="Select Menu"]]');
 
 }
