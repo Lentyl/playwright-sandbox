@@ -100,6 +100,19 @@ test("widgets - menu test", async ({ page, menuPage }) => {
 test.only("widgets - select menu test", async ({ page, selectMenuPage }) => {
     await page.goto("/");
     await selectMenuPage.commonSpace.goToTab(selectMenuPage.commonSpace.widgets_card(), selectMenuPage.select_menu_tab());
-    await selectMenuPage.select_value_combobox().selectOption('A root option');
-    await page.pause();
+    await selectMenuPage.select_value_combobox().click();
+    await selectMenuPage.select_value_option().click();
+    await expect(selectMenuPage.selected_values().nth(0)).toHaveText('A root option');
+    await selectMenuPage.select_one_combobox().click();
+    await selectMenuPage.select_one_option().click();
+    await expect(selectMenuPage.selected_values().nth(1)).toHaveText('Mr.');
+    await selectMenuPage.old_style_combobox().selectOption({ value: '2' })
+    expect(await selectMenuPage.old_style_combobox().inputValue()).toBe("2");
+    await selectMenuPage.multiselect_combobox().click();
+    await selectMenuPage.multiselect_blue_option().click();
+    await selectMenuPage.multiselect_red_option().click();
+    await expect(selectMenuPage.multiselected_values().nth(0)).toHaveText('Blue');
+    await expect(selectMenuPage.multiselected_values().nth(1)).toHaveText('Red');
+    await selectMenuPage.standard_multiselect_combobox().selectOption({ value: 'saab' });
+    expect(await selectMenuPage.standard_multiselect_combobox().inputValue()).toBe("saab");
 }) 
