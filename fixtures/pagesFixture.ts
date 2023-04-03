@@ -23,6 +23,12 @@ import SelectMenuPage from "../pages/widgets/SelectMenuPage";
 import SliderPage from "../pages/widgets/SliderPage";
 import TabsPage from "../pages/widgets/TabsPage";
 import ToolTipsPage from "../pages/widgets/ToolTipsPage";
+import DragablePage from "../pages/interactions/DragablePage";
+import DroppablePage from "../pages/interactions/DroppablePage";
+import ResizablePage from "../pages/interactions/ResizablePage";
+import SelectablePage from "../pages/interactions/SelectablePage";
+import SortablePage from "../pages/interactions/SortablePage";
+
 
 type pages = {
     textBoxPage: TextBoxPage;
@@ -48,7 +54,12 @@ type pages = {
     selectMenuPage: SelectMenuPage;
     sliderPage: SliderPage;
     tabsPage: TabsPage;
-    toolTipsPage: ToolTipsPage
+    toolTipsPage: ToolTipsPage;
+    dragablePage: DragablePage;
+    droppablePage: DroppablePage;
+    resizablePage: ResizablePage;
+    selectablePage: SelectablePage;
+    sortablePage: SortablePage;
 }
 
 const testPages = pageTest.extend<pages>({
@@ -124,6 +135,21 @@ const testPages = pageTest.extend<pages>({
     },
     toolTipsPage: async ({ page }, use) => {
         await use(new ToolTipsPage(page))
+    },
+    dragablePage: async ({ page }, use) => {
+        await use(new DragablePage(page))
+    },
+    droppablePage: async ({ page }, use) => {
+        await use(new DroppablePage(page))
+    },
+    resizablePage: async ({ page }, use) => {
+        await use(new ResizablePage(page))
+    },
+    selectablePage: async ({ page }, use) => {
+        await use(new SelectablePage(page))
+    },
+    sortablePage: async ({ page }, use) => {
+        await use(new SortablePage(page))
     },
 
 })
