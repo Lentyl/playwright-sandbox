@@ -1,8 +1,5 @@
 import { expect } from "@playwright/test"
 import { test } from "../fixtures/pagesFixture"
-import * as fs from 'fs';
-const pdfparse = require('pdf-parse');
-
 
 test("widgets - accordian test", async ({ page, accordianPage }) => {
     await page.goto("/");
@@ -118,20 +115,3 @@ test("widgets - select menu test", async ({ page, selectMenuPage }) => {
     await selectMenuPage.standard_multiselect_combobox().selectOption({ value: 'saab' });
     expect(await selectMenuPage.standard_multiselect_combobox().inputValue()).toBe("saab");
 })
-
-test("pdf - parse test", async () => {
-    const pdfFile = fs.readFileSync('data/files/walek.pdf')
-
-    await pdfparse(pdfFile).then(function (data) {
-        // console.log(data)
-
-        const arr = data.text.split('\n');
-
-        for (let i = 0; i < 9; i++) {
-            console.log(arr[i]);
-        }
-
-
-    })
-
-}) 

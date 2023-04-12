@@ -20,6 +20,4 @@ export default class AutoCompletePage {
     single_color_input = () => this.page.locator('div#autoCompleteSingleContainer input');
     single_voilet_color_name = () => this.page.locator('#react-select-3-option-0');
     single_selected_color_name = () => this.page.locator('div.auto-complete__single-value');
-
-
 }

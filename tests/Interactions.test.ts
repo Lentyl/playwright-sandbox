@@ -43,20 +43,44 @@ test("Interactions - selectable test", async ({ page, selectablePage }) => {
     await expect(selectablePage.square_tile_list().nth(8)).toHaveCSS('background-color', 'rgb(0, 123, 255)');
 })
 
-test.only("Interactions - resizable test", async ({ page, resizablePage }) => {
+test("Interactions - resizable test", async ({ page, resizablePage }) => {
     await page.goto("/");
     await resizablePage.commonSpace.goToTab(resizablePage.commonSpace.interactions_card(), resizablePage.resizable_tab());
-    await page.pause();
+    await resizablePage.first_resizable_window().evaluate(el => {
+        el.style.width = '500px';
+        el.style.height = '300px';
+    })
+    await expect(resizablePage.first_resizable_window()).toHaveCSS('width', '500px');
+    await expect(resizablePage.first_resizable_window()).toHaveCSS('height', '300px');
+    await resizablePage.second_resizable_window().evaluate(el => {
+        el.style.width = '700px';
+        el.style.height = '400px';
+    })
+    await expect(resizablePage.second_resizable_window()).toHaveCSS('width', '700px');
+    await expect(resizablePage.second_resizable_window()).toHaveCSS('height', '400px');
 })
 
-test("Interactions - droppable test", async ({ page, droppablePage }) => {
+test.only("Interactions - droppable test", async ({ page, droppablePage }) => {
     await page.goto("/");
     await droppablePage.commonSpace.goToTab(droppablePage.commonSpace.interactions_card(), droppablePage.droppable_tab());
-    await page.pause();
-})
-
-test("Interactions - dragabble test", async ({ page, dragablePage }) => {
-    await page.goto("/");
-    await dragablePage.commonSpace.goToTab(dragablePage.commonSpace.interactions_card(), dragablePage.dragabble_tab());
-
+    await droppablePage.drag_me_box().dragTo(droppablePage.droppeble_box_text());
+    expect(droppablePage.droppeble_box_text()).toHaveText('Dropped!');
+    await droppablePage.accept_nav_tab().click();
+    await droppablePage.acceptable_box().dragTo(droppablePage.acceptable_dropp_box_text());
+    expect(droppablePage.acceptable_dropp_box_text()).toHaveText('Dropped!');
+    await droppablePage.prevent_propogation_nav_tab().click();
+    await droppablePage.prevent_prpagation_drag_me_box().dragTo(droppablePage.prevent_prpagation_drappeble_outer_text());
+    expect(droppablePage.prevent_prpagation_drappeble_outer_text()).toHaveText('Dropped!');
+    await droppablePage.prevent_prpagation_drag_me_box().dragTo(droppablePage.prevent_prpagation_drappeble_inner_text());
+    expect(droppablePage.prevent_prpagation_drappeble_inner_text()).toHaveText('Dropped!');
+    await droppablePage.prevent_prpagation_drag_me_box().dragTo(droppablePage.prevent_prpagation_second_box_drappeble_outer_text());
+    expect(droppablePage.prevent_prpagation_second_box_drappeble_outer_text()).toHaveText('Dropped!');
+    await droppablePage.prevent_prpagation_drag_me_box().dragTo(droppablePage.prevent_prpagation__second_box_drappeble_inner_text());
+    expect(droppablePage.prevent_prpagation__second_box_drappeble_inner_text()).toHaveText('Dropped!');
+    await droppablePage.revert_draggable_nav_tab().click();
+    await droppablePage.revert_box().dragTo(droppablePage.revert_draggable_dropp_box());
+    await page.waitForTimeout(500);
+    expect(await droppablePage.isInTheBox(droppablePage.revert_box())).toBe(false);
+    await droppablePage.not_revert_box().dragTo(droppablePage.revert_draggable_dropp_box());
+    expect(await droppablePage.isInTheBox(droppablePage.not_revert_box())).toBe(true);
 })

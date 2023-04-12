@@ -20,6 +20,4 @@ export default class RadioButtonPage {
     no_radio_button = () => this.page.locator('input#noRadio');
     selected_text = () => this.page.locator('p.mt-3');
 
-
-
 }

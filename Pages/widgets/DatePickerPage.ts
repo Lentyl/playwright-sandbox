@@ -25,21 +25,6 @@ export default class DatePickerPage {
     date_time = () => this.page.locator('li.react-datepicker__time-list-item');
 
 
-
-    /*     await page.getByRole('combobox').nth(1).selectOption('2024');
-        await page.getByRole('combobox').first().selectOption('0');
-        await page.getByRole('option', { name: 'Choose Thursday, January 4th, 2024' }).click();
-        await page.locator('#dateAndTimePickerInput').click();
-        await page.getByText('20:00').click();
-        await page.locator('#dateAndTimePickerInput').click();
-        await page.locator('#dateAndTimePicker span').nth(2).click();
-        await page.getByText('2024').click();
-        await page.locator('#dateAndTimePicker span').first().click();
-        await page.getByText('January').click();
-        await page.getByRole('option', { name: 'Choose Thursday, January 4th, 2024' }).click();
-        await page.getByText('20:00').click(); */
-
-
     async selectDate(year: string, month: string, day: string) {
         await this.date_picker_input().click();
         await this.date_year_combobox().selectOption(year);

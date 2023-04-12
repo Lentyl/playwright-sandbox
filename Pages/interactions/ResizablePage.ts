@@ -13,6 +13,8 @@ export default class ResizablePage {
 
     //locators
     resizable_tab = () => this.page.locator('//li[child::span[text()="Resizable"]]');
+    first_resizable_window = () => this.page.locator('div#resizableBoxWithRestriction');
+    second_resizable_window = () => this.page.locator('div#resizable');
 
 
 }
