@@ -68,8 +68,8 @@ test.describe('Alerts frames and windows tests', () => {
     test("Alerts frame windows - frames test ", async ({ page, framesPage }) => {
         await page.goto("/");
         await framesPage.commonSpace.goToTab(framesPage.commonSpace.alerts_frames_windows_card(), framesPage.frames_tab());
-        expect(framesPage.first_frame().locator(framesPage.frame_text())).toHaveText('This is a sample page');
-        expect(framesPage.second_frame().locator(framesPage.frame_text())).toHaveText('This is a sample page');
+        await expect(framesPage.first_frame().locator(framesPage.frame_text())).toHaveText('This is a sample page');
+        await expect(framesPage.second_frame().locator(framesPage.frame_text())).toHaveText('This is a sample page');
     })
 
     test("Alerts frame windows - nested frames test ", async ({ page, nestedFramesPage }) => {
