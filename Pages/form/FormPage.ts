@@ -62,5 +62,4 @@ export default class FormPage {
         await this.city_option().click();
         await this.submit_button().click();
     }
-
 }

@@ -16,7 +16,6 @@ export default class SliderPage {
     slider = () => this.page.locator('input.range-slider--primary');
     slider_meater = () => this.page.locator('input#sliderValue');
 
-
     async moveSlider(targetPercentage: number) {
         const sliderBoundingBox = await this.slider().boundingBox()
         if (sliderBoundingBox === null) {
@@ -29,6 +28,4 @@ export default class SliderPage {
             }
         })
     }
-
-
 }

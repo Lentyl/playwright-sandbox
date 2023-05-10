@@ -24,7 +24,6 @@ export default class DatePickerPage {
     date_days = () => this.page.locator('div.react-datepicker__day');
     date_time = () => this.page.locator('li.react-datepicker__time-list-item');
 
-
     async selectDate(year: string, month: string, day: string) {
         await this.date_picker_input().click();
         await this.date_year_combobox().selectOption(year);

@@ -13,5 +13,4 @@ export default class DragablePage {
 
     //locators
     dragabble_tab = () => this.page.locator('//li[child::span[text()="Dragabble"]]');
-
 }

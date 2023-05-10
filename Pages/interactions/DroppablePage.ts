@@ -41,7 +41,6 @@ export default class DroppablePage {
         if (elementBox.x > box.x && elementBox.y > box.y && elementBox.x + elementBox.width < box.x + box.width && elementBox.y + elementBox.height < box.y + box.height) {
             inTheBox = true;
         }
-
         return inTheBox
     }
 }

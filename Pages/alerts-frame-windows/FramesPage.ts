@@ -16,7 +16,4 @@ export default class FramesPage {
     first_frame = () => this.page.frameLocator('iframe#frame1');
     second_frame = () => this.page.frameLocator('iframe#frame2');
     frame_text = () => 'h1#sampleHeading';
-
-
-
 }

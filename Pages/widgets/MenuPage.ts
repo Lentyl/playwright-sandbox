@@ -20,5 +20,4 @@ export default class MenuPage {
     sub_items = () => this.page.getByText('Sub Item');
     sub_sub_item1 = () => this.page.getByAltText('Sub Sub Item 1')
     sub_sub_item2 = () => this.page.getByAltText('Sub Sub Item 2')
-
 }

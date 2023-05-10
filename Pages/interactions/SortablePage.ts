@@ -17,7 +17,6 @@ export default class SortablePage {
     square_tile_list = () => this.page.locator('div#demo-tabpane-grid div.list-group-item');
     grid_tab = () => this.page.locator('a#demo-tab-grid');
 
-
     async sortRectangleElements() {
         await this.tile_list().nth(5).dragTo(this.tile_list().nth(0));
         await this.tile_list().nth(5).dragTo(this.tile_list().nth(1));

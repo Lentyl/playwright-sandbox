@@ -30,5 +30,4 @@ export default class LinksPage {
 
     //text response locator
     request_response_text = () => this.page.locator('p#linkResponse');
-
 }

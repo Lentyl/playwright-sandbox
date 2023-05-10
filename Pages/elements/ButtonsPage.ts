@@ -23,6 +23,4 @@ export default class BrokenImgeLinkPage {
     double_click_text = () => this.page.locator('p#doubleClickMessage');
     right_click_text = () => this.page.locator('p#rightClickMessage');
     dynamic_click_me_text = () => this.page.locator('p#dynamicClickMessage');
-
-
 }

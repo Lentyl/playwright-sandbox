@@ -20,5 +20,4 @@ export default class TabsPage {
     use_tab = () => this.page.locator('a#demo-tab-use');
     more_tab = () => this.page.locator('a#demo-tab-more');
     content = () => this.page.locator('p.mt-3');
-
 }

@@ -11,11 +11,11 @@ export default class BrokenImgeLinkPage {
         this.commonSpace = new BasePage(this.page);
     }
 
+    //locators
     broken_link_image_tab = () => this.page.locator('//li[child::span[text()="Broken Links - Images"]]');
     all_images = () => this.page.locator('img');
     valid_link = () => this.page.getByText('Click Here for Valid Link');
     broken_link = () => this.page.getByText('Click Here for Broken Link');
-
 
     async isBrokenImage(): Promise<boolean> {
 
@@ -29,5 +29,4 @@ export default class BrokenImgeLinkPage {
         };
         return brokenImage
     }
-
 }

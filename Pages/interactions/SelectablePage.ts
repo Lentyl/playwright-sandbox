@@ -36,5 +36,4 @@ export default class SelectablePage {
         await this.square_tile_list().nth(7).click();
         await this.square_tile_list().nth(8).click();
     }
-
 }

@@ -20,7 +20,7 @@ export default class CheckBoxPage {
     work_space_expand_tree_arrow = () => this.page.locator('//button[@title="Toggle" and ancestor::span[@class="rct-text" and descendant::span[contains(text(),"WorkSpace")]]]');
     office_expand_tree_arrow = () => this.page.locator('//button[@title="Toggle" and ancestor::span[@class="rct-text" and descendant::span[contains(text(),"Office")]]]');
 
-
+    //checkboxes
     home_checkbox = () => this.page.locator('//span[@class="rct-checkbox" and ancestor::span[@class="rct-text" and descendant::span[contains(text(),"Home")]]]');
     desktop_checkbox = () => this.page.locator('//span[@class="rct-checkbox" and ancestor::span[@class="rct-text" and descendant::span[contains(text(),"Desktop")]]]');
     documents_checkbox = () => this.page.locator('//span[@class="rct-checkbox" and ancestor::span[@class="rct-text" and descendant::span[contains(text(),"Documents")]]]');

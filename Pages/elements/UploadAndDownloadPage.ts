@@ -29,5 +29,4 @@ export default class UploadAndDownloadPage {
     async uploadFile() {
         await this.page.setInputFiles('input#uploadFile', ['data/downloads/sampleFile.jpeg']);
     }
-
 }

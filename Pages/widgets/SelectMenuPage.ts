@@ -24,5 +24,4 @@ export default class SelectMenuPage {
     multiselect_red_option = () => this.page.getByText('Red').nth(1);
     multiselected_values = () => this.page.locator('div.css-12jo7m5');
     standard_multiselect_combobox = () => this.page.locator('select#cars');
-
 }
