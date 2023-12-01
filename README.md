@@ -3,6 +3,7 @@ Chosen tests, verify about 98% cases of actions what we can have during daily ba
 
 
 <h3>Prerequisites</h3>
+
 - Git
 
 - Terminal (cmdr)
