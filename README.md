@@ -1,5 +1,5 @@
 This project performs automatic sample tests on <a>https://demoqa.com/</a> using TypeScript, Playwright, POM. 
-Chosen tests, verify about 98% cases of actions, what we can have, during daily basis in web application testing.
+Chosen tests, verify about 98% cases of actions what we can have during daily basis, in web application testing.
 
 
 <h3>Prerequisites</h3>
