@@ -1,22 +1,21 @@
-This project performs automatic sample tests on <a>https://demoqa.com/</a> using JAVA, TestNG, Rest assure, DDT approach.
+This project performs automatic sample tests on <a>https://demoqa.com/</a> using TypeScript, Playwright, POM. 
+Chosen tests, verify about 98% cases of actions, what we can have, during daily basis in web application testing.
+
 
 <h3>Prerequisites</h3>
 Git,
 Terminal (cmdr),
-Maven,
-JAVA 8
+Playwright,
 
 <h3>Service description</h3>
-Stripe API service documentation link: <a href="https://stripe.com/docs">Stripe API</a>
+https://demoqa.com/ This page is strictly dedicated for testing purposes, site is design to have interesting and demanding test cases :-)
 
 <h3>Steps to run tests:</h3>
 - Open terminal.
 
-- Navigate to project directory: directory where pom.xml file is present.
+- Navigate to project directory:
 
-- Type: mvn clean.
-
-- Type: mvn test.
+- Type: npx playwright test .
 
 <h3>Test results:</h3>
-The run report will be available after performing the run in the "reports" folder.
+The run report will be available after performing the run in the folder "test-results" folder.
