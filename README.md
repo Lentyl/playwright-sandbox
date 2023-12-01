@@ -15,7 +15,7 @@ https://demoqa.com/ This page is strictly dedicated for testing purposes, site i
 
 - Navigate to project directory:
 
-- Type: npx playwright test .
+- Type: npx playwright test
 
 <h3>Test results:</h3>
 The run report will be available after performing the run in the folder "test-results" folder.
