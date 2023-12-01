@@ -12,12 +12,12 @@ Node.js (version >16)
 https://demoqa.com/ This page is strictly dedicated for testing purposes, site is design to have interesting and demanding test cases :-)
 
 <h3>Steps to run tests:</h3>
-
-- install dependencies: npm install
   
 - Open terminal.
 
-- Navigate to project directory:
+- Navigate to project directory
+
+- install dependencies: npm install
 
 - Type: npx playwright test
 
