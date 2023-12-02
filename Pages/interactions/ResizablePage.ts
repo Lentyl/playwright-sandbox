@@ -1,18 +1,14 @@
 import BasePage from '../BasePage'
 import { Page } from "@playwright/test";
 
-export default class ResizablePage {
+export default class ResizablePage extends BasePage {
 
-    readonly page: Page;
-    readonly commonSpace: BasePage
+  constructor(page: Page) {
+    super(page);
+  }
 
-    constructor(page: Page) {
-        this.page = page
-        this.commonSpace = new BasePage(this.page);
-    }
-
-    //locators
-    resizable_tab = () => this.page.locator('//li[child::span[text()="Resizable"]]');
-    first_resizable_window = () => this.page.locator('div#resizableBoxWithRestriction');
-    second_resizable_window = () => this.page.locator('div#resizable');
+  //locators
+  resizable_tab = this.page.locator('//li[child::span[text()="Resizable"]]');
+  first_resizable_window = this.page.locator('div#resizableBoxWithRestriction');
+  second_resizable_window = this.page.locator('div#resizable');
 }

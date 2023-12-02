@@ -5,7 +5,7 @@ test.describe('Forms tests', () => {
 
   test("Forms - Practice forms test", async ({ page, formPage }) => {
     await page.goto("/", { waitUntil: "load" });
-    await formPage.goToTab(formPage.forms_card(), formPage.practice_form_tab());
+    await formPage.goToTab(formPage.forms_card, formPage.practice_form_tab());
     await formPage.fillAndConfirmForm();
     await expect(formPage.modal_confirmation_elements.nth(0)).toHaveText('Student Name');
     await expect(formPage.modal_confirmation_elements.nth(1)).toHaveText('Mariusz Podgorski');
