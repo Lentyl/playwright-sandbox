@@ -71,7 +71,8 @@ test.describe('Elemenst section tests', () => {
     await expect(webTablesPage.total_pages_quantity).toHaveText('2');
     await expect(webTablesPage.previous_table_page_button).toBeDisabled();
     await webTablesPage.table_page_input.fill("2");
-    await webTablesPage.page.keyboard.press('Enter');
+    await page.keyboard.press('Enter');
+    //await webTablesPage.page.keyboard.press('Enter');
     await webTablesPage.previous_table_page_button.click();
     await expect(webTablesPage.table_page_input).toHaveAttribute('value', '1');
     await expect(webTablesPage.previous_table_page_button).toBeDisabled()
