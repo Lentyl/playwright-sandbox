@@ -9,7 +9,7 @@ pipeline{
 
             steps{
                 sh 'docker imags'
-                sh 'docker run -it --rm --name playwright-containerr -v "$(pwd):/app" mcr.microsoft.com/playwright:v1.29.2-jammy'
+                sh 'docker run -it --rm --name playwright-container -v "%cd%":/app mcr.microsoft.com/playwright:v1.29.2-jammy'
             }
         }
 
