@@ -7,14 +7,14 @@ pipeline{
         stage('stage-1'){
 
             steps{
-                bat 'docker run -it --rm --name playwright-containerr -v "$(pwd):/app" mcr.microsoft.com/playwright:v1.29.2-jammy'
-                bat "npm install"
+                sh 'docker run -it --rm --name playwright-containerr -v "$(pwd):/app" mcr.microsoft.com/playwright:v1.29.2-jammy'
+                sh "npm install"
             }
         }
 
         stage('stage-2'){
             steps{
-                bat "npx playwright test"
+                sh "npx playwright test"
             }            
         }  
     }
