@@ -27,4 +27,4 @@ https://demoqa.com/ This page is strictly dedicated for testing purposes, site i
 
 
 <h3>Test results:</h3>
-The run report will be available after performing the run in the folder "test-results" folder.
+The run report will be available after performing the run in the  "test-results" folder.
