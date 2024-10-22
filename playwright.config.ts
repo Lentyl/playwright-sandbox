@@ -15,7 +15,7 @@ const config: PlaywrightTestConfig = {
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    headless: false,
+    headless: true,
     actionTimeout: 70000,
     baseURL: 'https://demoqa.com/',
     screenshot: 'only-on-failure',

@@ -150,8 +150,7 @@ const testPages = pageTest.extend<pages>({
     },
     sortablePage: async ({ page }, use) => {
         await use(new SortablePage(page))
-    },
-
+    }
 })
 
 export const test = testPages;
