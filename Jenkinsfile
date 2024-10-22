@@ -12,7 +12,7 @@ pipeline{
 
         stage('stage-2'){
             steps{
-                echo 'npx playwright test'
+                sh 'npx playwright test'
             }            
         }  
     }
