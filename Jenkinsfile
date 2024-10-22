@@ -6,23 +6,15 @@ pipeline{
 
         stage('stage-1'){
             steps{
-                echo "doing mvn clean"
-                echo "doing mvn package"
+                sh 'docker run -it --rm --name playwright-containerr -v "$(pwd):/app" mcr.microsoft.com/playwright:v1.29.2-jammy'
             }
         }
 
         stage('stage-2'){
             steps{
-                echo "building docker image"
+                echo 'npx playwright test'
             }            
         }  
-
-        stage('stage-3'){
-            steps{
-                echo "pushing docker image"
-            }            
-        }                
-
     }
 
     post {
