@@ -10,6 +10,7 @@ pipeline{
             steps{
                 bat 'docker images'
                 bat 'docker run -it --rm --name playwright-container -v "%cd%":/app mcr.microsoft.com/playwright:v1.29.2-jammy'
+                bat ''
             }
         }
 
