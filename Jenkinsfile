@@ -1,18 +1,21 @@
 pipeline{
 
-    agent any
+    agent {
+        docker{
+            image "mcr.microsoft.com/playwright:v1.29.2-jammy"
+        }
+    }
 
     stages{
 
-        stage('stage-1'){
+        stage('instalation'){
 
             steps{
-                bat 'docker run -it --rm --name playwright-containerr -v "$(pwd):/app" mcr.microsoft.com/playwright:v1.29.2-jammy'
                 bat "npm install"
             }
         }
 
-        stage('stage-2'){
+        stage('tests'){
             steps{
                 bat "npx playwright test"
             }            
