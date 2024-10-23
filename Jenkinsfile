@@ -2,7 +2,7 @@ pipeline{
 
     agent {
         docker{
-            image "mcr.microsoft.com/playwright:v1.29.2-jammy"
+            image "alpine"
         }
     }
 
@@ -11,7 +11,7 @@ pipeline{
         stage('instalation'){
 
             steps{
-                sh "npm install"
+                sh "wget www.google.com"
             }
         }
 
