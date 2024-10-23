@@ -11,13 +11,13 @@ pipeline{
         stage('instalation'){
 
             steps{
-                bat "npm install"
+                sh "npm install"
             }
         }
 
         stage('tests'){
             steps{
-                bat "npx playwright test"
+                sh "npx playwright test"
             }            
         }  
     }
