@@ -1,25 +1,15 @@
 pipeline{
 
-    agent {
-        docker{
-            image "alpine"
-        }
-    }
+    agent any
 
     stages{
 
-        stage('instalation'){
+        stage('tests'){
 
             steps{
-                sh "wget www.google.com"
+                sh "docker-compose -f docker-compose.yml up"
             }
         }
-
-        stage('tests'){
-            steps{
-                sh "npx playwright test"
-            }            
-        }  
     }
 
     post {
