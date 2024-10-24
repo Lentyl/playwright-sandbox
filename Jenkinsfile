@@ -9,6 +9,10 @@ pipeline{
             steps{
                 bat "docker-compose -f docker-compose.yml up"
             }
+
+            steps{
+                bat "docker -rm playwright_docker"
+            }
         }
     }
 
