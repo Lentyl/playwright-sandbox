@@ -15,6 +15,7 @@ pipeline{
         stage('cleanup'){
 
             steps{
+                bat "docker-compose -f docker-compose.yml down"
                 bat "docker -rm playwright_docker"
             }
         }
