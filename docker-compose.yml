@@ -1,7 +1,10 @@
 version: '3'
 services:
   playwright-test:
-    image: playwright
+    image: mcr.microsoft.com/playwright:v1.48.1-jammy
     build: .
     container_name: playwright_docker
-    command: npm run test
+    volumes:
+      - .:/app
+    working_dir: /app
+    entrypoint: "npx playwright test"
