@@ -24,7 +24,6 @@ pipeline{
 
     post {
         always {
-            cleanWs()
             bat "docker-compose -f docker-compose.yml down"
         }
     }
