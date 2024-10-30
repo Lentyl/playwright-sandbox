@@ -13,7 +13,7 @@ const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
+  reporter: [['html', { open: 'never' }]],
   use: {
     headless: true,
     actionTimeout: 70000,
