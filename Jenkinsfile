@@ -16,7 +16,7 @@ pipeline{
 
             steps{
                 bat "docker-compose -f docker-compose.yml down"
-                bat "docker -rm playwright_docker"
+                bat "docker --rm playwright_docker"
             }
         } */
 
@@ -25,7 +25,7 @@ pipeline{
     post {
         always {
             cleanWs()
-            bat "docker -rm playwright_docker"
+            bat "docker --rm playwright_docker"
         }
     }
 
