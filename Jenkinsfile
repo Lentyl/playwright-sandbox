@@ -7,7 +7,7 @@ pipeline{
         stage('tests'){
 
             steps{
-                bat "docker-compose -f docker-compose.yml up"
+                bat 'docker run -it --rm --name playwright-container -v "$(pwd):/app" mcr.microsoft.com/playwright:v1.48.1-jammy'
             }
 
         }
