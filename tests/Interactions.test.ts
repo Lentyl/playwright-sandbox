@@ -3,7 +3,7 @@ import { test } from "../fixtures/pagesFixture"
 
 test.describe('Interactions tests', () => {
 
-  test("Interactions - sortable test", async ({ page, sortablePage }) => {
+  test.only("Interactions - sortable test", async ({ page, sortablePage }) => {
     await page.goto("/");
     await sortablePage.goToTab(sortablePage.interactions_card, sortablePage.sortable_tab);
     await sortablePage.sortRectangleElements();
