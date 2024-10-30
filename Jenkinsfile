@@ -7,7 +7,16 @@ pipeline{
         stage('tests'){
 
             steps{
-                bat 'docker run -it --rm --name playwright-container -v "$(pwd):/app" mcr.microsoft.com/playwright:v1.48.1-jammy'
+                bat "docker-compose -f docker-compose.yml up -d "
+            }
+
+            steps{
+                bat "docker exec -it playwright_docker /bin/bash"
+            }
+
+            steps{
+                sh "npm install"
+                sh "npx playwright test"
             }
 
         }
