@@ -12,20 +12,20 @@ pipeline{
 
         }
 
-        stage('cleanup'){
+/*         stage('cleanup'){
 
             steps{
                 bat "docker-compose -f docker-compose.yml down"
                 bat "docker -rm playwright_docker"
             }
-        }
-
+        } */
 
     }
 
     post {
         always {
-            echo "doing clean up"      
+            cleanWs()
+            bat "docker -rm playwright_docker"
         }
     }
 
