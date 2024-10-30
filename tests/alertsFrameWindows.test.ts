@@ -3,7 +3,7 @@ import { test } from "../fixtures/pagesFixture"
 
 test.describe('Alerts frames and windows tests', () => {
 
-  test("Alerts frame windows - Browser windows test", async ({ page, browserWindowsPage }) => {
+  test.only("Alerts frame windows - Browser windows test", async ({ page, browserWindowsPage }) => {
     await page.goto("/", { waitUntil: "load" });
     await browserWindowsPage.goToTab(browserWindowsPage.alerts_frames_windows_card, browserWindowsPage.browser_windows_tab);
     const newTab = await browserWindowsPage.getNewTab(browserWindowsPage.new_tab_button)
