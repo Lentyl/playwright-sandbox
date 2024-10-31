@@ -1,4 +1,3 @@
-version: '3'
 services:
   playwright-test:
     image: playwright
@@ -6,6 +5,6 @@ services:
     container_name: playwright_docker
     volumes:
       - .:/app
-    command: bash -c " npx playwright test"
+    command: bash -c "npx playwright test"
     
 
