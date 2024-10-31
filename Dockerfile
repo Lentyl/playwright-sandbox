@@ -6,5 +6,7 @@ COPY package.json /app
 
 RUN npm install
 
-CMD [ "ls" "al" ]
+RUN ls -al
+
+CMD [ "npx", "playwright", "test" ]
 
