@@ -5,7 +5,3 @@ services:
     container_name: playwright_docker
     volumes:
     - .:/app
-    command: ls -al && npx playwright test
-  
-    
-
