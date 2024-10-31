@@ -5,6 +5,6 @@ services:
     container_name: playwright_docker
     volumes:
       - .:/app
-    command: bash -c "npx playwright test"
+    command: npx playwright test
     
 
