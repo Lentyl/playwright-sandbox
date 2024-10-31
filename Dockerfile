@@ -9,7 +9,10 @@ RUN npm install
 
 RUN ls -al
 
-RUN playwright --verion
+RUN npm init playwright@latest
+
+RUN npx playwright --version
+
 
 CMD [ "npx", "playwright", "test" ]
 
