@@ -8,5 +8,7 @@ RUN npm install
 
 RUN ls -al
 
+RUN playwright --verion
+
 CMD [ "npx", "playwright", "test" ]
 
