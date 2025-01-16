@@ -23,7 +23,7 @@ https://demoqa.com/ This page is strictly dedicated for testing purposes, site i
 
 - Install dependencies: npm install
 
-- Type: npx playwright test
+- Type: npx playwright test / with Docker: docker-compose -f docker-compose.yml up
 
 
 <h3>Test results:</h3>

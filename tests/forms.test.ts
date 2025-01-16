@@ -3,7 +3,7 @@ import { test } from "../fixtures/pagesFixture"
 
 test.describe('Forms tests', () => {
 
-  test.only("Forms - Practice forms test", async ({ page, formPage }) => {
+  test("Forms - Practice forms test", async ({ page, formPage }) => {
     await page.goto("/", { waitUntil: "load" });
     await formPage.goToTab(formPage.forms_card, formPage.practice_form_tab());
     await formPage.fillAndConfirmForm();
