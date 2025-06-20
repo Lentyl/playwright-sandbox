@@ -1,6 +1,8 @@
 FROM mcr.microsoft.com/playwright:v1.48.1-jammy
+
 WORKDIR /app
-COPY . /app
-RUN npm install
-CMD ["npx", "playwright", "test"]
+
+COPY package*.json ./
+
+RUN npm ci && npx playwright install --with-deps
 
