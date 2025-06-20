@@ -1,5 +1,6 @@
 services:
   playwright:
+    image: playwright
     build: .
     container_name: playwright_tests
     volumes:
