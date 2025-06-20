@@ -1,7 +1,8 @@
+version: '3.8'
 services:
-  playwright-test:
+  playwright:
     build: .
-    container_name: playwright_docker
+    container_name: playwright_tests
     volumes:
-      - .:/app
+      - ./:/app
     command: ["npx", "playwright", "test"]
