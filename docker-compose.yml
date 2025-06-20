@@ -4,4 +4,5 @@ services:
     container_name: playwright_tests
     volumes:
       - .:/app
+      - /app/node_modules
     command: ["npx", "playwright", "test"]
