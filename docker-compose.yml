@@ -6,5 +6,5 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
-      - ./playwright-report:/app/playwright-report
+      - ./playwright-reportt:/app/playwright-report
     command: ["npx", "playwright", "test"]
