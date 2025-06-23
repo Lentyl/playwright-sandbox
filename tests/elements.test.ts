@@ -3,7 +3,7 @@ import { test } from "../fixtures/pagesFixture"
 
 test.describe('Elemenst section tests', () => {
 
-  test("Elements - text box test", async ({ page, textBoxPage }) => {
+  test.only("Elements - text box test", async ({ page, textBoxPage }) => {
     await page.goto("/");
     await textBoxPage.goToTab(textBoxPage.elements_card, textBoxPage.text_box_tab);
     await textBoxPage.fillFormAndSubmit();
