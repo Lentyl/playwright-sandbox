@@ -7,4 +7,4 @@ services:
       - .:/app
       - /app/node_modules
       - ./playwright-report:/app/playwright-report
-    command: ["npx", "playwright", "test"]
+    command: ["npx", "playwright", "test", "--reporter-html"]
